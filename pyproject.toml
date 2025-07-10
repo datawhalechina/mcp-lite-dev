@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel>=0.45.1"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "mcp-lite-dev"
-version = "0.1.0"
+version = "0.1.1"
 description = "《MCP极简开发》项目代码"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -9,6 +13,16 @@ dependencies = [
     "mcp>=1.10.1",
     "openai>=1.93.3",
     "pip>=25.1.1",
+    "python-dotenv>=1.1.1",
     "setuptools>=80.9.0",
     "wheel>=0.45.1",
 ]
+
+[project.scripts]
+mcp-lite-dev = "weather:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -264,12 +264,13 @@ wheels = [
 [[package]]
 name = "mcp-lite-dev"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "httpx" },
     { name = "mcp" },
     { name = "openai" },
     { name = "pip" },
+    { name = "python-dotenv" },
     { name = "setuptools" },
     { name = "wheel" },
 ]
@@ -280,6 +281,7 @@ requires-dist = [
     { name = "mcp", specifier = ">=1.10.1" },
     { name = "openai", specifier = ">=1.93.3" },
     { name = "pip", specifier = ">=25.1.1" },
+    { name = "python-dotenv", specifier = ">=1.1.1" },
     { name = "setuptools", specifier = ">=80.9.0" },
     { name = "wheel", specifier = ">=0.45.1" },
 ]
