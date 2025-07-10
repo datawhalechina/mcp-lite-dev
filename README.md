@@ -1,6 +1,8 @@
-# 《MCP极简开发》项目代码
+<div align=center>
+<h1>《MCP极简开发》学习笔记</h1>
+</div>
 
-本项目来自Datawhale 2025年07月组队学习的共读《MCP极简开发》项目代码。
+本项目基于Datawhale组队学习的共读《MCP极简开发》课程，主要包括学习笔记和项目代码。
 
 项目地址：https://github.com/datawhalechina/mcp-lite-dev
 
@@ -43,6 +45,24 @@ BASE_URL=https://api.siliconflow.cn/v1
 MODEL=deepseek-ai/DeepSeek-V3
 API_KEY=YOUR_API_KEY
 ```
+
+## 项目协作安排
+
+| 章节号 |           标题           | 进度  |    负责人    |
+|:---:| :----------------------: |:---:|:---------:| 
+|  1  | 快速了解MCP         | 进行中 |     -     | 
+|  2  | MCP核心原理                 | 进行中 |    年轻人    |
+|  3  | MCP的安全问题                | 进行中 |    易华挥    | 
+|  6  | 动手写一个MCP            | 进行中 | The Flash |
+|  7  | MCP开发进阶                 |  进行中   |     -     |
+
+## 致谢
+
+**核心贡献者**
+- [胡锐锋-项目负责人](https://github.com/Relph1119) （Datawhale成员-华东交通大学-系统架构设计师）
+
+**其他**
+1. 特别感谢 [@Sm1les](https://github.com/Sm1les)、[@LSGOMYP](https://github.com/LSGOMYP) 对本项目的帮助与支持；
 
 ## 阅读提示
 
