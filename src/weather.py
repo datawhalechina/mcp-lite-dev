@@ -4,7 +4,7 @@
 @file: weather.py
 @time: 2025/7/10 17:50
 @project: mcp-lite-dev
-@desc: 6.2.3 天气查询的MCP Server
+@desc: 7.2.1 基于SEE的天气查询 MCP Server
 """
 
 import json
