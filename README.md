@@ -36,7 +36,7 @@ activate
 OPENWEATHER_API_KEY=YOUR_API_KEY
 ```
 
-3. 访问[硅基流动网站]()，注册账号，获取API KEY  
+3. 访问[硅基流动网站](https://cloud.siliconflow.cn/)，注册账号，获取API KEY  
 **注：书中使用的是deepseek，我们使用硅基流动的模型，其实效果是一样的。**
 
 4. 在项目根目录下新建`.env`文件，并添加以下内容
