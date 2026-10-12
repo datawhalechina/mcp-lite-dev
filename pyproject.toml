@@ -23,6 +23,7 @@ mcp-lite-dev = "weather:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+py-modules = ["weather"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -46,6 +46,16 @@ MODEL=deepseek-ai/DeepSeek-V3
 API_KEY=YOUR_API_KEY
 ```
 
+## 离线回归测试
+
+安装上述依赖后，在项目根目录运行：
+
+```shell
+uv run --frozen python -m unittest discover -s tests -v
+```
+
+测试会构建 wheel 和源码包，在隔离目录安装并启动发布入口，通过本机 SSE 连接验证 MCP 工具列表。不需要 API Key，也不会调用天气 API 或大模型。
+
 ## 项目协作安排
 
 | 章节号 |           标题           | 进度  |    负责人    |
