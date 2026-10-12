@@ -71,7 +71,7 @@ class MCPClient:
             "function": {
                 "name": tool.name,
                 "description": tool.description,
-                "input_schema": tool.inputSchema
+                "parameters": tool.inputSchema
             }
         } for tool in response.tools]
 
@@ -84,22 +84,19 @@ class MCPClient:
         # 处理返回的内容
         content = response.choices[0]
         if content.finish_reason == "tool_calls":
-            # 如果需要使用工具，就解析工具
-            tool_call = content.message.tool_calls[0]
-            tool_name = tool_call.function.name
-            tool_args = json.loads(tool_call.function.arguments)
-
-            # 执行工具
-            result = await self.session.call_tool(tool_name, tool_args)
-            print(f"\n\n[Calling tool {tool_name} with args {tool_args}]\n\n")
-
-            # 将模型返回的调用哪个工具数据和工具执行完成后的数据都存入messages中
+            # 保留完整工具调用消息，并为每个调用返回对应的结果
             messages.append(content.message.model_dump())
-            messages.append({
-                "role": "tool",
-                "content": result.content[0].text,
-                "tool_call_id": tool_call.id,
-            })
+            for tool_call in content.message.tool_calls:
+                tool_name = tool_call.function.name
+                tool_args = json.loads(tool_call.function.arguments)
+
+                result = await self.session.call_tool(tool_name, tool_args)
+                print(f"\n\n[Calling tool {tool_name} with args {tool_args}]\n\n")
+                messages.append({
+                    "role": "tool",
+                    "content": result.content[0].text,
+                    "tool_call_id": tool_call.id,
+                })
 
             # 将上面的结果再返回给大模型用于生产最终的结果
             response = self.client.chat.completions.create(
